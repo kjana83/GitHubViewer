@@ -1,0 +1,40 @@
+<ion-nav-bar class="bar-balanced" >
+    <h1 class="title">Github Viewer</h1>
+</ion-nav-bar>
+
+<ion-view>
+	<ion-content ng-controller="UserController as vm">		
+		<div class="card">
+			<div class="item item-avatar">
+				<img src="{{vm.user.avatar_url}}" height="100px" width="100px"/>				
+				<h2>{{vm.user.name}}</h2>
+				<label>{{vm.user.type}}</label>
+				<label>{{vm.user.location}}</label>
+			</div>
+			
+		</div>
+<div class="list">
+	<div class="row">
+		<div class="col col-center">
+			<h3>Name</h3>
+		</div>
+		<div class="col-20 col-center">
+			<h3>Stars</h3>
+		</div>	
+	</div>
+	<a class="row item" data-ng-repeat="repo in vm.repos" href="{{repo.html_url}}">
+		<div class="col col-center">
+			{{repo.name}}
+		</div>
+		<div class="col-20 col-center">
+			{{repo.stargazers_count}}
+		</div>	
+	</a>
+</div>
+	
+<a class="item item-text-wrap item-icon-top" ng-href="#/home">
+				Home
+								<i class="icon ion-home"></i>
+			</a>		
+	</ion-content>
+</ion-view>
