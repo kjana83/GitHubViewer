@@ -15,10 +15,17 @@
 				success(function(data){
 					return data;
 				});
-		}
+		};
+		var getContribs = function(username,reponame){
+			return $http.get('https://api.github.com/repos/'+ username + '/'+ reponame +'/contributors').
+				success(function(data){
+					return data;
+				});
+		};
 			return {
 				getUser : getUser,
-				getRepos : getRepos
+				getRepos : getRepos,
+				getContribs : getContribs
 			};
 		};
 })();

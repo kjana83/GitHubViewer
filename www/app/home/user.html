@@ -22,7 +22,7 @@
 			<h3>Stars</h3>
 		</div>	
 	</div>
-	<a class="row item" data-ng-repeat="repo in vm.repos" href="{{repo.html_url}}">
+	<a class="row item" data-ng-repeat="repo in vm.repos" ng-href="#/home/contribs/{{vm.user.name}}/{{repo.name}}">
 		<div class="col col-center">
 			{{repo.name}}
 		</div>

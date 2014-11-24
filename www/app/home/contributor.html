@@ -1,0 +1,22 @@
+<ion-nav-bar class="bar-balanced" >
+    <h1 class="title">Github Viewer</h1>
+</ion-nav-bar>
+
+<ion-view>
+	<ion-content ng-controller="ContributorController as vm">	
+		<div class="list">
+			<div class="card" ng-repeat="user in vm.contribs">
+				<a class="item item-thumbnail-left" ng-href="#/home/user/{{user.login}}">
+					
+					<img src="{{user.avatar_url}}" height="100px" width="100px"/>				
+					<h2>{{user.login}}</h2>
+					<label>{{user.contributions}}</label>
+				</a>
+			</div>
+		</div>
+		<a class="item item-text-wrap item-icon-top" ng-href="#/home/user/{{vm.username}}">
+				Back
+								<i class="icon ion-home"></i>
+			</a>	
+	</ion-content>
+</ion-view>

@@ -26,6 +26,10 @@ angular.module('GitHubViewer', ['ionic'])
     .state('home/user/:username',{
       url:'/home/user/:username',
       templateUrl:'app/home/user.html'
+    })
+    .state('home/contribs/:username/:reponame',{
+      url:'/home/contribs/:username/:reponame',
+      templateUrl:'app/home/contributor.html'
     });
     $urlRouterProvider.otherwise('/home');  
 
